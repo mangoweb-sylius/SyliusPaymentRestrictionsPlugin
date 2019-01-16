@@ -7,7 +7,11 @@
 
 ## Features
 
-xxxx
+ - Restrict payment method by zone.
+
+<p align="center">
+	<img src="https://raw.githubusercontent.com/mangoweb-sylius/SyliusPaymentRestrictionsPlugin/master/doc/admin.png"/>
+</p>
 
 ## Installation
 
