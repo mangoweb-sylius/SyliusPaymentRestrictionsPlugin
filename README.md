@@ -12,8 +12,8 @@
     <a href="https://packagist.org/packages/mangoweb-sylius/sylius-payment-restrictions-plugin" title="Version" target="_blank">
         <img src="https://img.shields.io/packagist/v/mangoweb-sylius/sylius-payment-restrictions-plugin.svg" />
     </a>
-    <a href="http://travis-ci.org/mangoweb-sylius/PaymentRestrictionPlugin" title="Build status" target="_blank">
-        <img src="https://img.shields.io/travis/mangoweb-sylius/PaymentRestrictionPlugin/master.svg" />
+    <a href="https://travis-ci.org/mangoweb-sylius/SyliusPaymentRestrictionsPlugin" title="Build status" target="_blank">
+        <img src="https://img.shields.io/travis/mangoweb-sylius/SyliusPaymentRestrictionsPlugin/master.svg" />
     </a>
 </h1>
 
