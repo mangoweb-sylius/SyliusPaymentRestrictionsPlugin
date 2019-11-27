@@ -1,0 +1,5 @@
+mangoweb:
+    admin:
+        paymentMethod:
+            form:
+                shippingMethods: Shipping methods
