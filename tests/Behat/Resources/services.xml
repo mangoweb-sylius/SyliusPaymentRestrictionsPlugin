@@ -13,8 +13,7 @@
 		</service>
 
 		<service id="sylius_payment_restriction.context.ui.admin.payment_method"
-				 class="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Context\Ui\Admin\ManagingPaymentMethodContext"
-				 decorates="sylius.behat.context.ui.admin.managing_payments">
+				 class="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Context\Ui\Admin\ManagingPaymentMethodContext">
 			<argument type="service"
 					  id="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Page\Admin\PaymentMethod\UpdatePageInterface"/>
 			<argument type="service" id="sylius.behat.shared_storage"/>
