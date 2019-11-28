@@ -9,6 +9,8 @@ use Sylius\Component\Addressing\Model\ZoneInterface;
 
 interface PaymentMethodRestrictionInterface
 {
+	public function setZone(?ZoneInterface $zone): void;
+
 	public function getZone(): ?ZoneInterface;
 
 	public function getShippingMethods(): Collection;

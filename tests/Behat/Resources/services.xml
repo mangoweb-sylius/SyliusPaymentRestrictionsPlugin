@@ -1,16 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
-    <services>
-        <!-- Put your Behat services here -->
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		   xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-        <service id="acme_sylius_example.context.ui.shop.welcome" class="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Context\Ui\Shop\WelcomeContext">
-            <argument type="service" id="acme_sylius_example.page.shop.static_welcome" />
-            <argument type="service" id="acme_sylius_example.page.shop.dynamic_welcome" />
-            <tag name="fob.context_service" />
-        </service>
+	<services>
+		<defaults public="true"/>
 
-        <service id="acme_sylius_example.page.shop.static_welcome" class="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Page\Shop\StaticWelcomePage" parent="sylius.behat.symfony_page" public="false" />
-        <service id="acme_sylius_example.page.shop.dynamic_welcome" class="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Page\Shop\DynamicWelcomePage" parent="sylius.behat.symfony_page" public="false" />
-    </services>
+		<service id="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Page\Admin\PaymentMethod\UpdatePageInterface"
+				 class="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Page\Admin\PaymentMethod\UpdatePage"
+				 parent="sylius.behat.page.admin.crud.update" public="false">
+			<argument type="string">sylius_admin_channel_update</argument>
+		</service>
+
+		<service id="sylius_payment_restriction.context.ui.admin.payment_method"
+				 class="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Context\Ui\Admin\ManagingPaymentMethodContext"
+				 decorates="sylius.behat.context.ui.admin.managing_payments">
+			<argument type="service"
+					  id="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Page\Admin\PaymentMethod\UpdatePageInterface"/>
+			<argument type="service" id="sylius.behat.shared_storage"/>
+			<argument type="service" id="doctrine.orm.entity_manager"/>
+		</service>
+
+		<service id="sylius_payment_restriction.context.setup.checkout_payment_context"
+				 class="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Context\Ui\Shop\CheckoutPaymentContext">
+			<argument type="service" id="sylius.behat.context.ui.shop.checkout.payment"/>
+		</service>
+
+		<service id="sylius_payment_restriction.context.setup.payment_method"
+				 class="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Context\Setup\PaymentMethodContext">
+			<argument type="service" id="doctrine.orm.entity_manager"/>
+			<argument type="service" id="sylius.repository.payment_method"/>
+			<argument type="service" id="sylius.repository.shipping_method"/>
+		</service>
+
+	</services>
 </container>
