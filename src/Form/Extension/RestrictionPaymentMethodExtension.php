@@ -6,10 +6,16 @@ namespace MangoSylius\PaymentRestrictionPlugin\Form\Extension;
 
 use Sylius\Bundle\AddressingBundle\Form\Type\ZoneChoiceType;
 use Sylius\Bundle\PaymentBundle\Form\Type\PaymentMethodType;
+use Sylius\Component\Core\Model\ShippingMethod;
+use Sylius\Component\Core\Model\ShippingMethodInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
+/**
+ * @method iterable getExtendedTypes()
+ */
 final class RestrictionPaymentMethodExtension extends AbstractTypeExtension
 {
 	public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -20,6 +26,16 @@ final class RestrictionPaymentMethodExtension extends AbstractTypeExtension
 				'constraints' => [
 					new NotBlank(['groups' => ['sylius']]),
 				],
+			])
+			->add('shippingMethods', EntityType::class, [
+				'label' => 'mangoweb.admin.paymentMethod.form.shippingMethods',
+				'class' => ShippingMethod::class,
+				'expanded' => true,
+				'multiple' => true,
+				'required' => true,
+				'choice_label' => function (ShippingMethodInterface $shippingMethod = null) {
+					return $shippingMethod ? $shippingMethod->getName() . ' (' . $shippingMethod->getCode() . ')' : '';
+				},
 			]);
 	}
 

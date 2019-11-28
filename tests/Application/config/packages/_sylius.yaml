@@ -9,3 +9,8 @@ imports:
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'
 
+sylius_payment:
+    resources:
+        payment_method:
+            classes:
+                model: Tests\MangoSylius\PaymentRestrictionPlugin\Application\src\Entity\Payment\PaymentMethod

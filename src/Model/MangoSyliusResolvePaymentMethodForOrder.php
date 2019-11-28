@@ -8,6 +8,8 @@ use Sylius\Component\Addressing\Matcher\ZoneMatcherInterface;
 use Sylius\Component\Addressing\Model\ZoneInterface;
 use Sylius\Component\Core\Model\AddressInterface;
 use Sylius\Component\Core\Model\OrderInterface;
+use Sylius\Component\Shipping\Model\Shipment;
+use Sylius\Component\Shipping\Model\ShippingMethodInterface;
 
 class MangoSyliusResolvePaymentMethodForOrder
 {
@@ -25,6 +27,10 @@ class MangoSyliusResolvePaymentMethodForOrder
 		$shippingAddress = $order->getShippingAddress();
 		assert($shippingAddress instanceof AddressInterface);
 
+		if (!$this->isAllowedForShippingMethod($paymentMethod, $order)) {
+			return false;
+		}
+
 		$zones = $this->zoneMatcher->matchAll($shippingAddress);
 		foreach ($zones as $zone) {
 			assert($zone instanceof ZoneInterface);
@@ -34,5 +40,19 @@ class MangoSyliusResolvePaymentMethodForOrder
 		}
 
 		return false;
+	}
+
+	public function isAllowedForShippingMethod(PaymentMethodRestrictionInterface $paymentMethod, OrderInterface $order): bool
+	{
+		$shipment = $order->getShipments()->last();
+		if (!($shipment instanceof Shipment)) {
+			return true;
+		}
+
+		$shippingMethod = $shipment->getMethod();
+		assert($shippingMethod instanceof ShippingMethodInterface);
+		assert($paymentMethod instanceof PaymentMethodRestrictionInterface);
+
+		return $paymentMethod->getShippingMethods()->contains($shippingMethod);
 	}
 }

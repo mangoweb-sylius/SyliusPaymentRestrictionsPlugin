@@ -40,8 +40,8 @@ install:
     - (cd tests/Application && yarn install)
 
 before_script:
-    # - (cd tests/Application && bin/console doctrine:database:create --env=test -vvv)
-    # - (cd tests/Application && bin/console doctrine:schema:create --env=test -vvv)
+    - (cd tests/Application && bin/console doctrine:database:create --env=test -vvv)
+    - (cd tests/Application && bin/console doctrine:schema:create --env=test -vvv)
     # - (cd tests/Application && bin/console assets:install web --env=test -vvv)
     - (cd tests/Application && bin/console cache:warmup --env=test -vvv)
     - (cd tests/Application && yarn build)
@@ -53,7 +53,7 @@ script:
     - composer validate --strict
     - ls -la tests/Application/var/cache/test
     - bin/phpstan.sh
-#    - bin/behat
+    - bin/behat
     - bin/ecs.sh
 
 after_failure:

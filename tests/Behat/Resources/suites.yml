@@ -1,10 +1,5 @@
-# Put your Behat suites definitions here
-
-default:
-    suites:
-        greeting_customer:
-            contexts_services:
-                - acme_sylius_example.context.ui.shop.welcome
-
-            filters:
-                tags: "@greeting_customer"
+imports:
+    - suites/limit_paymet_method_by_shipping_method.yml
+    - suites/limit_paymet_method_by_zone.yml
+    - suites/set_shipping_method_restrictions_to_payment_method.yml
+    - suites/set_zone_restrictions_to_payment_method.yml
