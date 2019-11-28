@@ -22,7 +22,7 @@ final class CheckoutPaymentContext implements Context
 	}
 
 	/**
-	 * @Given /^I can not see ("([^"]+)" payment method)$/
+	 * @Given /^I can not see ("([^"]+)" payment method) in the list of payment methods$/
 	 */
 	public function shippingMethodAllowsPayingWith(string $name)
 	{

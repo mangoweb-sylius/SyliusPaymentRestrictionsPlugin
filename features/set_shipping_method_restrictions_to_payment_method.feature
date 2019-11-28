@@ -1,5 +1,5 @@
 @set_shipping_method_restrictions_to_payment_method
-Feature: Set shipping method restrictions to payment method
+Feature: Restrict payment method by shipping method
 	In order to add a shipping methods to payment method settings in admin panel
 	As an Administrator
 	I want to set shipping methods on the payment method edit page
@@ -18,4 +18,4 @@ Feature: Set shipping method restrictions to payment method
 		When I select shipping method "Free"
 		And I save my changes
 		Then I should be notified that it has been successfully edited
-		And this payment method has shipping method "Free"
+		And this payment method is enabled for shipping method "Free"

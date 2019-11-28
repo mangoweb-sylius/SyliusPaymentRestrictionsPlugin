@@ -47,7 +47,7 @@ final class ManagingPaymentMethodContext implements Context
 	}
 
 	/**
-	 * @When /^(this payment method) has (shipping method "([^"]+)")$/
+	 * @When /^(this payment method) is enabled for (shipping method "([^"]+)")$/
 	 */
 	public function thisPaymentMethodHasShippingMethod(PaymentMethodInterface $paymentMethod, ShippingMethodInterface $shippingMethod)
 	{
@@ -63,7 +63,7 @@ final class ManagingPaymentMethodContext implements Context
 	}
 
 	/**
-	 * @When /^(this payment method) zone should be (zone "([^"]+)")$/
+	 * @When /^the allowed zone for (this payment method) should be (zone "([^"]+)")$/
 	 */
 	public function thisPaymentMethodZoneShouldBe(PaymentMethodInterface $paymentMethod, ZoneInterface $zone)
 	{

@@ -2,7 +2,7 @@
 Feature: Set zone restrictions to payment method
 	In order to add a zone to payment method settings in admin panel
 	As an Administrator
-	I want to set the zone on the payment method edit page
+	I want to restrict the payment method to specific zone
 
 	Background:
 		Given the store operates on a channel named "manGoweb Channel"
@@ -17,6 +17,6 @@ Feature: Set zone restrictions to payment method
 		When I change this payment method zone to zone "NorthAmerica"
 		And I save my changes
 		Then I should be notified that it has been successfully edited
-		And this payment method zone should be zone "NorthAmerica"
+		And the allowed zone for this payment method should be zone "NorthAmerica"
 
 
