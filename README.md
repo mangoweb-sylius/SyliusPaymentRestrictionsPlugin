@@ -19,7 +19,8 @@
 
 ## Features
 
- - Restrict payment method by zone.
+ - Restrict payment method by zone. This enables to limit selected payment methods to specific zones or areas from the delivery address.
+ - Restrict payment method by shipping method - this means that it can disable specific shipment-payment combinations.
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/mangoweb-sylius/SyliusPaymentRestrictionsPlugin/master/doc/admin.png"/>
@@ -71,27 +72,29 @@
 
 1. Change `@SyliusAdmin/PaymentMethod/_form.html.twig`.
  
-```twig
-...
-<div class="ui segment">
-	<h4 class="ui dividing header">{{ 'sylius.ui.details'|trans }}</h4>
-	{{ form_errors(form) }}
+    ```twig
+    ...
+    <div class="ui segment">
+        <h4 class="ui dividing header">{{ 'sylius.ui.details'|trans }}</h4>
+        {{ form_errors(form) }}
 
-	<div class="three fields">
-		{{ form_row(form.code) }}
-		{{ form_row(form.zone) }}
-		{{ form_row(form.position) }}
-	</div>
-	{{ form_row(form.enabled) }}
-	<div class="two fields">
-		{{ form_row(form.channels) }}
-		{{ form_row(form.shippingMethods) }}
-	</div>
-</div>
-...
-```
+        <div class="three fields">
+            {{ form_row(form.code) }}
+            {{ form_row(form.zone) }}
+            {{ form_row(form.position) }}
+        </div>
+        {{ form_row(form.enabled) }}
+        <div class="two fields">
+            {{ form_row(form.channels) }}
+            {{ form_row(form.shippingMethods) }}
+        </div>
+    </div>
+    ...
+    ```
 
-For guide to use your own entity see [Sylius docs - Customizing Models](https://docs.sylius.com/en/1.3/customization/model.html)
+1. Create and run doctrine database migrations.
+
+For guide to use your own entity see [Sylius docs - Customizing Models](https://docs.sylius.com/en/1.6/customization/model.html)
 
 ## Development
 
