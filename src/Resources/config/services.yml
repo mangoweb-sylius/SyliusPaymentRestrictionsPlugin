@@ -22,3 +22,5 @@ services:
         tags:
             - extended_type: Sylius\Bundle\PaymentBundle\Form\Type\PaymentMethodType
               name: form.type_extension
+        arguments:
+            $shippingMethodClass: '%sylius.model.shipping_method.class%'
