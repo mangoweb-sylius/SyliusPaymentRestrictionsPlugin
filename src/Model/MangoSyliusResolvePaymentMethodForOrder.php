@@ -53,6 +53,13 @@ class MangoSyliusResolvePaymentMethodForOrder
 		assert($shippingMethod instanceof ShippingMethodInterface);
 		assert($paymentMethod instanceof PaymentMethodRestrictionInterface);
 
-		return $paymentMethod->getShippingMethods()->contains($shippingMethod);
+		foreach ($paymentMethod->getShippingMethods() as $sm) {
+			assert($sm instanceof ShippingMethodInterface);
+			if ($sm->getId() === $shippingMethod->getId()) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 }
