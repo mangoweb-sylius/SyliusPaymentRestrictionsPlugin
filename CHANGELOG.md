@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.3.1 (2019-12-10)
+
+#### Details
+
+- Now works even with overridden shipment entity.
+
 ## v0.3.0 (2019-11-28)
 
 #### Details
