@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.3.2 (2020-01-21)
+
+#### Details
+
+- Compare zones by codes. 
+
 ## v0.3.1 (2019-12-10)
 
 #### Details

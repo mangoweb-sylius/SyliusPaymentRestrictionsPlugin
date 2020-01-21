@@ -33,9 +33,16 @@ class MangoSyliusResolvePaymentMethodForOrder
 
 		$zones = $this->zoneMatcher->matchAll($shippingAddress);
 		foreach ($zones as $zone) {
-			assert($zone instanceof ZoneInterface);
-			if ($paymentMethod->getZone() === $zone) {
-				return true;
+			$zones = $this->zoneMatcher->matchAll($shippingAddress);
+			foreach ($zones as $zone) {
+				assert($zone instanceof ZoneInterface);
+				$paymentMethodZone = $paymentMethod->getZone();
+				if ($paymentMethodZone !== null) {
+					$paymentMethodZoneCode = $paymentMethodZone->getCode();
+					if ($paymentMethodZoneCode === $zone->getCode()) {
+						return true;
+					}
+				}
 			}
 		}
 
