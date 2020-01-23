@@ -13,7 +13,7 @@ trait PaymentMethodRestrictionTrait
 {
 	/**
 	 * @var ZoneInterface|null
-	 * @ORM\ManyToOne(targetEntity="Sylius\Component\Addressing\Model\Zone")
+	 * @ORM\ManyToOne(targetEntity="Sylius\Component\Addressing\Model\ZoneInterface")
 	 */
 	private $zone;
 
