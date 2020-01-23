@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.3.2 (2020-01-23)
+
+#### Details
+
+- Change zone mapping in PaymentMethodRestrictionTrait. 
+
 ## v0.3.2 (2020-01-21)
 
 #### Details
