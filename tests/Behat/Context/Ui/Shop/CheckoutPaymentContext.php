@@ -10,9 +10,7 @@ use Webmozart\Assert\Assert;
 
 final class CheckoutPaymentContext implements Context
 {
-	/**
-	 * @var BaseCheckoutPaymentContext
-	 */
+	/** @var BaseCheckoutPaymentContext */
 	private $checkoutPaymentContext;
 
 	public function __construct(

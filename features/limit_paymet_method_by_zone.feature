@@ -23,7 +23,7 @@ Feature: Limit paymet method by zone
 	@ui
 	Scenario: Unavailable payment method according to zone
 		Given I have product "PHP T-Shirt" in the cart
-		And I specified the shipping address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+		And I specified the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
 		And I select "DHL" shipping method
 		And I complete the shipping step
 		And I select "CSOB" payment method
@@ -31,7 +31,7 @@ Feature: Limit paymet method by zone
 	@ui
 	Scenario: Not see a payment method in zone
 		Given I have product "PHP T-Shirt" in the cart
-		And I specified the shipping address as "Ankh Morpork", "Frost Alley", "90210", "Germany" for "Jon Snow"
+		And I specified the billing address as "Ankh Morpork", "Frost Alley", "90210", "Germany" for "Jon Snow"
 		And I select "PPL" shipping method
 		And I complete the shipping step
 		And I can not see "CSOB" payment method in the list of payment methods

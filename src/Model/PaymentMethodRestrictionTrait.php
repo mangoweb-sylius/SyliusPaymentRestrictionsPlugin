@@ -18,7 +18,7 @@ trait PaymentMethodRestrictionTrait
 	private $zone;
 
 	/**
-	 * @var Collection|ShippingMethodInterface[]
+	 * @var Collection<array-key, ShippingMethodInterface>|ShippingMethodInterface[]
 	 * @ORM\ManyToMany(targetEntity="Sylius\Component\Core\Model\ShippingMethod", inversedBy="paymentMethods")
 	 * @ORM\JoinTable(name="mangoweb_payment_method_shipping_method",
 	 *     joinColumns={@ORM\JoinColumn(name="payment_method_id", referencedColumnName="id")},
@@ -37,11 +37,17 @@ trait PaymentMethodRestrictionTrait
 		$this->zone = $zone;
 	}
 
+	/**
+	 * @return Collection<array-key, ShippingMethodInterface>
+	 */
 	public function getShippingMethods(): Collection
 	{
 		return $this->shippingMethods;
 	}
 
+	/**
+	 * @param Collection<array-key, ShippingMethodInterface> $shippingMethods
+	 */
 	public function setShippingMethods(Collection $shippingMethods): void
 	{
 		$this->shippingMethods = $shippingMethods;

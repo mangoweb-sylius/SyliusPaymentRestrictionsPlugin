@@ -15,17 +15,13 @@ use Sylius\Component\Core\Repository\ShippingMethodRepositoryInterface;
 
 final class PaymentMethodContext implements Context
 {
-	/**
-	 * @var EntityManagerInterface
-	 */
+	/** @var EntityManagerInterface */
 	private $entityManager;
-	/**
-	 * @var PaymentMethodRepositoryInterface
-	 */
+
+	/** @var PaymentMethodRepositoryInterface */
 	private $paymentMethodRepository;
-	/**
-	 * @var ShippingMethodRepositoryInterface
-	 */
+
+	/** @var ShippingMethodRepositoryInterface */
 	private $shippingMethodRepository;
 
 	public function __construct(

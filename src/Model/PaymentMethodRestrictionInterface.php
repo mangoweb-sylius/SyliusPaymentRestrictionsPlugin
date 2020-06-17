@@ -6,6 +6,7 @@ namespace MangoSylius\PaymentRestrictionPlugin\Model;
 
 use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Addressing\Model\ZoneInterface;
+use Sylius\Component\Core\Model\ShippingMethodInterface;
 
 interface PaymentMethodRestrictionInterface
 {
@@ -13,7 +14,13 @@ interface PaymentMethodRestrictionInterface
 
 	public function getZone(): ?ZoneInterface;
 
+	/**
+	 * @return Collection<array-key, ShippingMethodInterface>
+	 */
 	public function getShippingMethods(): Collection;
 
+	/**
+	 * @param Collection<array-key, ShippingMethodInterface> $shippingMethods
+	 */
 	public function setShippingMethods(Collection $shippingMethods): void;
 }

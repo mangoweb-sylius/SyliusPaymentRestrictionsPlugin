@@ -14,4 +14,3 @@ docker-compose.yaml
 /bin-docker/
 /deploy/
 /docker/
-/etc/

@@ -15,17 +15,13 @@ use Webmozart\Assert\Assert;
 
 final class ManagingPaymentMethodContext implements Context
 {
-	/**
-	 * @var UpdatePageInterface
-	 */
+	/** @var UpdatePageInterface */
 	private $updatePage;
-	/**
-	 * @var SharedStorageInterface
-	 */
+
+	/** @var SharedStorageInterface */
 	private $sharedStorage;
-	/**
-	 * @var EntityManagerInterface
-	 */
+
+	/** @var EntityManagerInterface */
 	private $entityManager;
 
 	public function __construct(

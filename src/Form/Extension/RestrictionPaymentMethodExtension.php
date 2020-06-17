@@ -10,16 +10,10 @@ use Sylius\Component\Core\Model\ShippingMethodInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Validator\Constraints\NotBlank;
 
-/**
- * @method iterable getExtendedTypes()
- */
 final class RestrictionPaymentMethodExtension extends AbstractTypeExtension
 {
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	private $shippingMethodClass;
 
 	public function __construct(
@@ -28,14 +22,12 @@ final class RestrictionPaymentMethodExtension extends AbstractTypeExtension
 		$this->shippingMethodClass = $shippingMethodClass;
 	}
 
+	/** @param array<mixed> $options */
 	public function buildForm(FormBuilderInterface $builder, array $options): void
 	{
 		$builder
 			->add('zone', ZoneChoiceType::class, [
 				'label' => 'sylius.form.address.zone',
-				'constraints' => [
-					new NotBlank(['groups' => ['sylius']]),
-				],
 			])
 			->add('shippingMethods', EntityType::class, [
 				'label' => 'mangoweb.admin.paymentMethod.form.shippingMethods',
@@ -49,8 +41,11 @@ final class RestrictionPaymentMethodExtension extends AbstractTypeExtension
 			]);
 	}
 
-	public function getExtendedType(): string
+	/** @return array<string> */
+	public static function getExtendedTypes(): array
 	{
-		return PaymentMethodType::class;
+		return [
+			PaymentMethodType::class,
+		];
 	}
 }

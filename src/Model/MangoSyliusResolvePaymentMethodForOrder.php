@@ -31,17 +31,18 @@ class MangoSyliusResolvePaymentMethodForOrder
 			return false;
 		}
 
+		if ($paymentMethod->getZone() === null) {
+			return true;
+		}
+
 		$zones = $this->zoneMatcher->matchAll($shippingAddress);
 		foreach ($zones as $zone) {
-			$zones = $this->zoneMatcher->matchAll($shippingAddress);
-			foreach ($zones as $zone) {
-				assert($zone instanceof ZoneInterface);
-				$paymentMethodZone = $paymentMethod->getZone();
-				if ($paymentMethodZone !== null) {
-					$paymentMethodZoneCode = $paymentMethodZone->getCode();
-					if ($paymentMethodZoneCode === $zone->getCode()) {
-						return true;
-					}
+			assert($zone instanceof ZoneInterface);
+			$paymentMethodZone = $paymentMethod->getZone();
+			if ($paymentMethodZone !== null) {
+				$paymentMethodZoneCode = $paymentMethodZone->getCode();
+				if ($paymentMethodZoneCode === $zone->getCode()) {
+					return true;
 				}
 			}
 		}
