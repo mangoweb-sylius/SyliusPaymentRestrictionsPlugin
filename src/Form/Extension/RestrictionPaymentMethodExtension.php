@@ -28,7 +28,7 @@ final class RestrictionPaymentMethodExtension extends AbstractTypeExtension
 		$builder
 			->add('zone', ZoneChoiceType::class, [
 				'label' => 'sylius.form.address.zone',
-				'placeholder' => 'sylius.form.zone.scopes.all'
+				'placeholder' => 'sylius.form.zone.scopes.all',
 			])
 			->add('shippingMethods', EntityType::class, [
 				'label' => 'mangoweb.admin.paymentMethod.form.shippingMethods',
