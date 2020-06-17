@@ -15,14 +15,10 @@ use Webmozart\Assert\Assert;
 
 class PaymentMethodsResolver implements PaymentMethodsResolverInterface
 {
-	/**
-	 * @var PaymentMethodRepositoryInterface
-	 */
+	/** @var PaymentMethodRepositoryInterface */
 	private $paymentMethodRepository;
 
-	/**
-	 * @var MangoSyliusResolvePaymentMethodForOrder
-	 */
+	/** @var MangoSyliusResolvePaymentMethodForOrder */
 	private $paymentOrderResolver;
 
 	public function __construct(

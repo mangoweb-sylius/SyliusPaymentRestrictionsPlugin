@@ -20,7 +20,7 @@ Feature: Limit paymet method by shipping method
 	@ui
 	Scenario: Available payment method according to selected shipping method
 		Given I have product "PHP T-Shirt" in the cart
-		And I specified the shipping address as "Ankh Morpork", "Frost Alley", "90210", "Czechia" for "Jon Snow"
+		And I specified the billing address as "Ankh Morpork", "Frost Alley", "90210", "Czechia" for "Jon Snow"
 		And I select "DHL" shipping method
 		And I complete the shipping step
 		And I select "CSOB" payment method
@@ -28,7 +28,7 @@ Feature: Limit paymet method by shipping method
 	@ui
 	Scenario: Unavailable payment method according to selected shipping method
 		Given I have product "PHP T-Shirt" in the cart
-		And I specified the shipping address as "Ankh Morpork", "Frost Alley", "90210", "Czechia" for "Jon Snow"
+		And I specified the billing address as "Ankh Morpork", "Frost Alley", "90210", "Czechia" for "Jon Snow"
 		And I select "PPL" shipping method
 		And I complete the shipping step
 		And I can not see "CSOB" payment method in the list of payment methods

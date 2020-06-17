@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v1.0.0 (2020-06-17)
+
+#### Details
+
+- Update to Sylius ^1.7
+- Update to php ^7.3
+- Zone is not required
+
 ## v0.3.3 (2020-01-23)
 
 #### Details
