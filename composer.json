@@ -1,5 +1,5 @@
 {
-	"name": "mangoweb-sylius/sylius-payment-restrictions-plugin",
+	"name": "3brs/sylius-payment-restrictions-plugin",
 	"type": "sylius-plugin",
 	"description": "Payment restriction plugin for Sylius",
 	"license": "MIT",
