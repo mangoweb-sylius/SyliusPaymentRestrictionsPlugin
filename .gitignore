@@ -14,3 +14,5 @@ docker-compose.yaml
 /bin-docker/
 /deploy/
 /docker/
+
+yarn-error.log

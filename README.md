@@ -12,8 +12,8 @@
     <a href="https://packagist.org/packages/3brs/sylius-payment-restrictions-plugin" title="Version" target="_blank">
         <img src="https://img.shields.io/packagist/v/3brs/sylius-payment-restrictions-plugin.svg" />
     </a>
-    <a href="https://travis-ci.com/3brs/sylius-payment-restrictions-plugin" title="Build status" target="_blank">
-        <img src="https://img.shields.io/travis/3brs/sylius-payment-restrictions-plugin/master.svg" />
+    <a href="https://circleci.com/gh/3BRS/sylius-payment-restrictions-plugin" title="Build status" target="_blank">
+        <img src="https://circleci.com/gh/3BRS/sylius-payment-restrictions-plugin.svg?style=shield" />
     </a>
 </h1>
 
@@ -28,7 +28,7 @@
 
 ## Installation
 
-1. Run `$ composer require mangoweb-sylius/sylius-payment-restrictions-plugin`.
+1. Run `$ composer require 3brs/sylius-payment-restrictions-plugin`.
 1. Add plugin class to your `config/bundles.php`:
  
    ```php

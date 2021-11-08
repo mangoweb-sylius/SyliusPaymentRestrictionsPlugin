@@ -4,11 +4,11 @@ services:
         autoconfigure: false
         public: false
 
-    MangoSylius\PaymentRestrictionPlugin\Model\MangoSyliusResolvePaymentMethodForOrder:
+    ThreeBRS\SyliusPaymentRestrictionPlugin\Model\ThreeBRSSyliusResolvePaymentMethodForOrder:
         arguments:
             $zoneMatcher: '@sylius.zone_matcher'
 
-    MangoSylius\PaymentRestrictionPlugin\PaymentResolver\PaymentMethodsResolver:
+    ThreeBRS\SyliusPaymentRestrictionPlugin\PaymentResolver\PaymentMethodsResolver:
         tags:
             - name: "sylius.payment_method_resolver"
               type: "channel_based"
@@ -16,9 +16,9 @@ services:
               priority: 100
         arguments:
             $paymentMethodRepository: '@sylius.repository.payment_method'
-            $paymentOrderResolver: '@MangoSylius\PaymentRestrictionPlugin\Model\MangoSyliusResolvePaymentMethodForOrder'
+            $paymentOrderResolver: '@ThreeBRS\SyliusPaymentRestrictionPlugin\Model\ThreeBRSSyliusResolvePaymentMethodForOrder'
 
-    MangoSylius\PaymentRestrictionPlugin\Form\Extension\RestrictionPaymentMethodExtension:
+    ThreeBRS\SyliusPaymentRestrictionPlugin\Form\Extension\RestrictionPaymentMethodExtension:
         tags:
             - extended_type: Sylius\Bundle\PaymentBundle\Form\Type\PaymentMethodType
               name: form.type_extension

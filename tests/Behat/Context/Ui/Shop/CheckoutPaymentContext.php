@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Context\Ui\Shop;
+namespace Tests\ThreeBRS\SyliusPaymentRestrictionPlugin\Behat\Context\Ui\Shop;
 
 use Behat\Behat\Context\Context;
 use Sylius\Behat\Context\Ui\Shop\Checkout\CheckoutPaymentContext as BaseCheckoutPaymentContext;

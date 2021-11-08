@@ -6,27 +6,27 @@
 	<services>
 		<defaults public="true"/>
 
-		<service id="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Page\Admin\PaymentMethod\UpdatePageInterface"
-				 class="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Page\Admin\PaymentMethod\UpdatePage"
+		<service id="Tests\ThreeBRS\SyliusPaymentRestrictionPlugin\Behat\Page\Admin\PaymentMethod\UpdatePageInterface"
+				 class="Tests\ThreeBRS\SyliusPaymentRestrictionPlugin\Behat\Page\Admin\PaymentMethod\UpdatePage"
 				 parent="sylius.behat.page.admin.crud.update" public="false">
 			<argument type="string">sylius_admin_channel_update</argument>
 		</service>
 
 		<service id="sylius_payment_restriction.context.ui.admin.payment_method"
-				 class="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Context\Ui\Admin\ManagingPaymentMethodContext">
+				 class="Tests\ThreeBRS\SyliusPaymentRestrictionPlugin\Behat\Context\Ui\Admin\ManagingPaymentMethodContext">
 			<argument type="service"
-					  id="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Page\Admin\PaymentMethod\UpdatePageInterface"/>
+					  id="Tests\ThreeBRS\SyliusPaymentRestrictionPlugin\Behat\Page\Admin\PaymentMethod\UpdatePageInterface"/>
 			<argument type="service" id="sylius.behat.shared_storage"/>
 			<argument type="service" id="doctrine.orm.entity_manager"/>
 		</service>
 
 		<service id="sylius_payment_restriction.context.setup.checkout_payment_context"
-				 class="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Context\Ui\Shop\CheckoutPaymentContext">
+				 class="Tests\ThreeBRS\SyliusPaymentRestrictionPlugin\Behat\Context\Ui\Shop\CheckoutPaymentContext">
 			<argument type="service" id="sylius.behat.context.ui.shop.checkout.payment"/>
 		</service>
 
 		<service id="sylius_payment_restriction.context.setup.payment_method"
-				 class="Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Context\Setup\PaymentMethodContext">
+				 class="Tests\ThreeBRS\SyliusPaymentRestrictionPlugin\Behat\Context\Setup\PaymentMethodContext">
 			<argument type="service" id="doctrine.orm.entity_manager"/>
 			<argument type="service" id="sylius.repository.payment_method"/>
 			<argument type="service" id="sylius.repository.shipping_method"/>

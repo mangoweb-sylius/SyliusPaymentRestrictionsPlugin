@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Context\Setup;
+namespace Tests\ThreeBRS\SyliusPaymentRestrictionPlugin\Behat\Context\Setup;
 
 use Behat\Behat\Context\Context;
 use Doctrine\ORM\EntityManagerInterface;
-use MangoSylius\PaymentRestrictionPlugin\Model\PaymentMethodRestrictionInterface;
+use ThreeBRS\SyliusPaymentRestrictionPlugin\Model\PaymentMethodRestrictionInterface;
 use Sylius\Component\Addressing\Model\ZoneInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
 use Sylius\Component\Core\Model\ShippingMethodInterface;

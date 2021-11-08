@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MangoSylius\PaymentRestrictionPlugin\PaymentResolver;
+namespace ThreeBRS\SyliusPaymentRestrictionPlugin\PaymentResolver;
 
-use MangoSylius\PaymentRestrictionPlugin\Model\MangoSyliusResolvePaymentMethodForOrder;
+use ThreeBRS\SyliusPaymentRestrictionPlugin\Model\ThreeBRSSyliusResolvePaymentMethodForOrder;
 use Sylius\Component\Core\Model\ChannelInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\PaymentInterface;
@@ -18,12 +18,12 @@ class PaymentMethodsResolver implements PaymentMethodsResolverInterface
 	/** @var PaymentMethodRepositoryInterface */
 	private $paymentMethodRepository;
 
-	/** @var MangoSyliusResolvePaymentMethodForOrder */
+	/** @var ThreeBRSSyliusResolvePaymentMethodForOrder */
 	private $paymentOrderResolver;
 
 	public function __construct(
 		PaymentMethodRepositoryInterface $paymentMethodRepository,
-		MangoSyliusResolvePaymentMethodForOrder $paymentOrderResolver
+		ThreeBRSSyliusResolvePaymentMethodForOrder $paymentOrderResolver
 	) {
 		$this->paymentMethodRepository = $paymentMethodRepository;
 		$this->paymentOrderResolver = $paymentOrderResolver;

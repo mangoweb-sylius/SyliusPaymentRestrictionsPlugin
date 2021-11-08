@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MangoSylius\PaymentRestrictionPlugin\Form\Extension;
+namespace ThreeBRS\SyliusPaymentRestrictionPlugin\Form\Extension;
 
 use Sylius\Bundle\AddressingBundle\Form\Type\ZoneChoiceType;
 use Sylius\Bundle\PaymentBundle\Form\Type\PaymentMethodType;
@@ -31,7 +31,7 @@ final class RestrictionPaymentMethodExtension extends AbstractTypeExtension
 				'placeholder' => 'sylius.form.zone.scopes.all',
 			])
 			->add('shippingMethods', EntityType::class, [
-				'label' => 'mangoweb.admin.paymentMethod.form.shippingMethods',
+				'label' => 'threebrs.admin.paymentMethod.form.shippingMethods',
 				'class' => $this->shippingMethodClass,
 				'expanded' => true,
 				'multiple' => true,

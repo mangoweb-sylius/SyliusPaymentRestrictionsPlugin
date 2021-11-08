@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MangoSylius\PaymentRestrictionPlugin\Model;
+namespace ThreeBRS\SyliusPaymentRestrictionPlugin\Model;
 
 use Sylius\Component\Addressing\Matcher\ZoneMatcherInterface;
 use Sylius\Component\Addressing\Model\ZoneInterface;
@@ -11,7 +11,7 @@ use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Shipping\Model\Shipment;
 use Sylius\Component\Shipping\Model\ShippingMethodInterface;
 
-class MangoSyliusResolvePaymentMethodForOrder
+class ThreeBRSSyliusResolvePaymentMethodForOrder
 {
 	/** @var ZoneMatcherInterface */
 	private $zoneMatcher;

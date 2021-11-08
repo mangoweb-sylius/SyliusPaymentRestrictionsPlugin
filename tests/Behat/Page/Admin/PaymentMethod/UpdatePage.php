@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\MangoSylius\PaymentRestrictionPlugin\Behat\Page\Admin\PaymentMethod;
+namespace Tests\ThreeBRS\SyliusPaymentRestrictionPlugin\Behat\Page\Admin\PaymentMethod;
 
 use Sylius\Behat\Page\Admin\Channel\UpdatePage as BaseUpdatePage;
 

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace MangoSylius\PaymentRestrictionPlugin\DependencyInjection;
+namespace ThreeBRS\SyliusPaymentRestrictionPlugin\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class MangoSyliusPaymentRestrictionExtension extends Extension
+class ThreeBRSSyliusPaymentRestrictionExtension extends Extension
 {
 	public function load(array $configs, ContainerBuilder $container): void
 	{
