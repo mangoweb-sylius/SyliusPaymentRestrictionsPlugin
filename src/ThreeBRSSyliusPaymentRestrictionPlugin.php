@@ -9,5 +9,5 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class ThreeBRSSyliusPaymentRestrictionPlugin extends Bundle
 {
-	use SyliusPluginTrait;
+    use SyliusPluginTrait;
 }

@@ -2,15 +2,14 @@ imports:
     - { resource: "@SyliusCoreBundle/Resources/config/app/config.yml" }
 
     - { resource: "@SyliusAdminBundle/Resources/config/app/config.yml" }
-    - { resource: "@SyliusAdminApiBundle/Resources/config/app/config.yml" }
 
     - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
+
+    - { resource: "@SyliusApiBundle/Resources/config/app/config.yaml" }
 
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'
 
-sylius_payment:
-    resources:
-        payment_method:
-            classes:
-                model: Tests\MangoSylius\PaymentRestrictionPlugin\Application\src\Entity\Payment\PaymentMethod
+sylius_shop:
+    product_grid:
+        include_all_descendants: true

@@ -8,11 +8,11 @@ use Sylius\Behat\Page\Admin\Channel\UpdatePageInterface as BaseUpdatePageInterfa
 
 interface UpdatePageInterface extends BaseUpdatePageInterface
 {
-	public function isSingleResourceOnPage(string $elementName);
+    public function isSingleResourceOnPage(string $elementName);
 
-	public function changeZone(string $zoneCode): void;
+    public function changeZone(string $zoneCode): void;
 
-	public function activateForShippinMethod(int $shippmentMethodId): void;
+    public function activateForShippinMethod(int $shippmentMethodId): void;
 
-	public function isActivateForShippinMethod(int $shippmentMethodId): bool;
+    public function isActivateForShippinMethod(int $shippmentMethodId): bool;
 }

@@ -10,22 +10,22 @@ use Webmozart\Assert\Assert;
 
 final class CheckoutPaymentContext implements Context
 {
-	/** @var BaseCheckoutPaymentContext */
-	private $checkoutPaymentContext;
+    /** @var BaseCheckoutPaymentContext */
+    private $checkoutPaymentContext;
 
-	public function __construct(
-		BaseCheckoutPaymentContext $checkoutPaymentContext
-	) {
-		$this->checkoutPaymentContext = $checkoutPaymentContext;
-	}
+    public function __construct(
+        BaseCheckoutPaymentContext $checkoutPaymentContext
+    ) {
+        $this->checkoutPaymentContext = $checkoutPaymentContext;
+    }
 
-	/**
-	 * @Given /^I can not see ("([^"]+)" payment method) in the list of payment methods$/
-	 */
-	public function shippingMethodAllowsPayingWith(string $name)
-	{
-		Assert::throws(function () use ($name) {
-			$this->checkoutPaymentContext->iSelectPaymentMethod($name);
-		}, \Behat\Mink\Exception\ElementNotFoundException::class);
-	}
+    /**
+     * @Given /^I can not see ("([^"]+)" payment method) in the list of payment methods$/
+     */
+    public function shippingMethodAllowsPayingWith(string $name)
+    {
+        Assert::throws(function () use ($name) {
+            $this->checkoutPaymentContext->iSelectPaymentMethod($name);
+        }, \Behat\Mink\Exception\ElementNotFoundException::class);
+    }
 }
