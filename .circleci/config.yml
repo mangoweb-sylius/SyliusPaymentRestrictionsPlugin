@@ -50,4 +50,4 @@ jobs:
             -   run: ./bin/ecs.sh
             -   run: ./bin/phpstan.sh
             -   run: ./bin/symfony-lint.sh
-#            -   run: ./bin/behat
+            -   run: ./bin/behat

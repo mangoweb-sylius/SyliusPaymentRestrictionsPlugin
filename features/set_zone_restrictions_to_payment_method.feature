@@ -5,7 +5,7 @@ Feature: Set zone restrictions to payment method
 	I want to restrict the payment method to specific zone
 
 	Background:
-		Given the store operates on a channel named "manGoweb Channel"
+		Given the store operates on a channel named "3BRS Channel"
 		And the store has zones "NorthAmerica", "SouthAmerica" and "Europe"
 		And the store has a payment method "Offline" with a code "offline"
 		And this payment method has zone "Europe"

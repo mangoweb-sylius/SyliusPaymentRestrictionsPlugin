@@ -5,7 +5,7 @@ Feature: Limit paymet method by shipping method
 	I want to select payment method by shipping method
 
 	Background:
-		Given the store operates on a channel named "manGoweb Channel"
+		Given the store operates on a channel named "3BRS Channel"
 		And the store operates in "Czechia"
 		And the store also has a zone "EU" with code "EU"
 		And this zone has the "Czechia" country member

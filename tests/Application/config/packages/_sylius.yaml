@@ -13,3 +13,9 @@ parameters:
 sylius_shop:
     product_grid:
         include_all_descendants: true
+
+sylius_payment:
+    resources:
+        payment_method:
+            classes:
+                model: Tests\ThreeBRS\SyliusPaymentRestrictionPlugin\Application\Entity\PaymentMethod

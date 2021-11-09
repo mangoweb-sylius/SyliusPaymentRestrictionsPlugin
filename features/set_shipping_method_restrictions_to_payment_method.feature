@@ -5,7 +5,7 @@ Feature: Restrict payment method by shipping method
 	I want to set shipping methods on the payment method edit page
 
 	Background:
-		Given the store operates on a channel named "manGoweb Channel"
+		Given the store operates on a channel named "3BRS Channel"
 		And the store has zones "NorthAmerica", "SouthAmerica" and "Europe"
 		And the store has a payment method "Offline" with a code "offline"
 		And the store has "Free" shipping method with "$0.00" fee
